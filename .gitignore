@@ -14,7 +14,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.sqlite
+db.sqlite
 .pyc
 node_modules/
 venv/
@@ -23,6 +23,7 @@ logs_result.log
 .idea/
 .cache
 migrations/
-/migrations
+bakend/migrations/
+
 
 **/__pycache__
