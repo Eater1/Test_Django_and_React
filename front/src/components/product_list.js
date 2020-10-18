@@ -27,7 +27,6 @@ class Product_list extends Component {
     async getMessage(){
     try {
         let response = await axiosInstance.get('/hello/');
-        console.log(response.data.access);
         const message = response.data.hello;
         this.setState({
             message: message,
@@ -54,15 +53,11 @@ class Product_list extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         try {
-            console.log(localStorage.getItem('access_token'));
             // Создаем новый обьект FormData (HTML-форму)
             let form_data = new FormData();
             // В нашу форму добавляем информацию о загруженном файле
             form_data.append('cover', this.state.cover, this.state.cover.name);
             const response = await axiosInstance.post('/product/', form_data);
-            console.log('+++');
-            console.log(response.data.access);
-            console.log(localStorage.getItem('access_token'));
             const message = response.data.err;
 
             if (!!message) {
@@ -103,7 +98,6 @@ class Product_list extends Component {
         event.preventDefault();
         try {
             // Создаем post запрос добавляя в тело запроса логин пользователя и пароль
-            console.log(localStorage.getItem('access_token'));
             const response = await axiosInstance.post('/product-text/', {
                 vendor_code: this.state.bar_code
             });

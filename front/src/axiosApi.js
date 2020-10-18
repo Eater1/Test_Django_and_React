@@ -13,8 +13,6 @@ const axiosInstance = axios.create({
     }
 });
 
-console.log(localStorage.getItem('access_token'));
-console.log(localStorage.getItem('refresh_token'));
 // Перехватчик
 axiosInstance.interceptors.response.use(
     response => response,
